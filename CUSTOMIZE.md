@@ -30,7 +30,7 @@ RGB value are decimal.
 Setup your custom styles
 ========================
 
-CV4TW is designed to be highly customizable. To change a style, add this line after `\usetheme` statment:
+CVAMM is designed to be highly customizable. To change a style, add this line after `\usetheme` statment:
 ```latex
 \setmystyle[<style>]{<content>}
 ```

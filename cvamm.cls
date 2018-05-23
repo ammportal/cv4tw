@@ -2,21 +2,19 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \LoadClassWithOptions{article}
-\ProvidesClass{cv4tw}[2014/05/27 v0.2 LaTeX CV class, with assets, social networks, and customizable styles]
+\ProvidesClass{cvamm}[2014/05/27 v0.2 LaTeX CV class, with assets, social networks, and customizable styles forked from cv4tw]
 \RequirePackage{newenviron}
 \RequirePackage{etoolbox}
 \RequirePackage{xcolor}
-%\RequirePackage{navigator}
 \RequirePackage{graphicx}
 \RequirePackage{xstring}
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
 \RequirePackage[hidelinks]{hyperref}
-%\RequirePackage{refcount}
 
-%
+
 % Quick and Dirty key values commands
-%
+
 \newcommand*{\qdprefix}{qd=}
 \newcommand*{\qdsetlength}[3]{
 	\expandafter\let\csname \qdprefix#2#1length\endcsname=\relax
@@ -69,10 +67,10 @@
 }
 \newcommand*{\usetheme}[2][]{
 	%Load scheme if asked
-	\RequirePackage[#1]{cv4tw-scheme}
+	\RequirePackage[#1]{cvamm-scheme}
 	%Apply theme
-	\RequirePackage[]{cv4tw-theme-core}
-	\RequirePackage[]{cv4tw-theme-#2}
+	\RequirePackage[]{cvamm-theme-core}
+	\RequirePackage[]{cvamm-theme-#2}
 }
 
 \newcommand*{\setmystyle}[2][]{\expandafter\qdset{mystyle#1}{#2}}

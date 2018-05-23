@@ -1,7 +1,7 @@
-cv4tw
+cvamm
 =====
 
-LaTeX CV class, with assets, social networks, and customizable styles.
+LaTeX CV class, with assets, social networks, and customizable styles. Forked and modified from cv4tw
 
 Available themes
 ----------------
@@ -72,4 +72,3 @@ Change logs
 * 2014-05-21: quick install guide, custom fields added
 * 2014-01-19: working version, lack a bit of documentation
 * 2014-01-08: alpha version, almost working
-
