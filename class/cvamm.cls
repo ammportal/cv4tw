@@ -11,7 +11,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
 \RequirePackage[hidelinks]{hyperref}
-
+\RequirePackage[utf8]{inputenc}
 
 % Quick and Dirty key values commands
 
@@ -91,18 +91,18 @@
 \newcommand*{\cvcontact}[1][]{\qdget{cvcontact#1}}
 \newcommand*{\cvcontactlink}[1]{
 \IfEqCase{#1}{
-{email}{ \qdlink{mailto:}{cvcontact#1}{}}%
-{homepage}{ \qdlink{http://}{cvcontact#1}{}}%
-{homepagessl}{ \qdlink{https://}{cvcontact#1}{}}%
-{customhomepage}{ \qdlink{}{cvcontact#1}{}}%
-{vk}{ \qdlink{http://www.vk.com/}{cvcontact#1}{}}%
-{pinterest}{ \qdlink{http://www.pinterest.com/}{cvcontact#1}{}}%
-{linkedin}{ \qdlink{https://www.linkedin.com/in/}{cvcontact#1}{}}%
-{twitter}{ \qdlink{https://www.twitter.com/}{cvcontact#1}{}}%
-{github}{ \qdlink{https://www.github.com/}{cvcontact#1}{}}%
-{facebook}{ \qdlink{https://www.facebook.com/}{cvcontact#1}{}}%
-{googleplus}{ \qdlink{https://plus.google.com/}{cvcontact#1}{}}%
-{bitbucket}{ \qdlink{https://www.bitbucket.org/}{cvcontact#1}{}}%
+    {email}{ \qdlink{mailto:}{cvcontact#1}{}}%
+    {homepage}{ \qdlink{http://}{cvcontact#1}{}}%
+    {homepagessl}{ \qdlink{https://}{cvcontact#1}{}}%
+    {customhomepage}{ \qdlink{}{cvcontact#1}{}}%
+    {vk}{ \qdlink{http://www.vk.com/}{cvcontact#1}{}}%
+    {pinterest}{ \qdlink{http://www.pinterest.com/}{cvcontact#1}{}}%
+    {linkedin}{ \qdlink{https://www.linkedin.com/in/}{cvcontact#1}{}}%
+    {twitter}{ \qdlink{https://www.twitter.com/}{cvcontact#1}{}}%
+    {github}{ \qdlink{https://www.github.com/}{cvcontact#1}{}}%
+    {facebook}{ \qdlink{https://www.facebook.com/}{cvcontact#1}{}}%
+    {googleplus}{ \qdlink{https://plus.google.com/}{cvcontact#1}{}}%
+    {bitbucket}{ \qdlink{https://www.bitbucket.org/}{cvcontact#1}{}}%
 }[{\qdget{cvcontact#1}}]
 }
 \newcommand*{\ifcvcontact}[3][]{\qdif{cvcontact#1}{#2}{#3}}
@@ -127,9 +127,9 @@
 
 \makeatletter
 \newcommand{\colorletifnotdef}[2]{%
-  \@ifundefined{\string\color@#1}{\colorlet{#1}{#2}}{}}
+    \@ifundefined{\string\color@#1}{\colorlet{#1}{#2}}{}}
 \newcommand{\definecolorifnotdef}[3]{%
-  \@ifundefined{\string\color@#1}{\definecolor{#1}{#2}{#3}}{}}
+    \@ifundefined{\string\color@#1}{\definecolor{#1}{#2}{#3}}{}}
 \makeatother
 
 

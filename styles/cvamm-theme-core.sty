@@ -12,40 +12,40 @@
 \RequirePackage{forloop}
 
 \setcvcontactszone[main]{%
-\rendercontactifdefined{custom0}%
-\rendercontactifdefined{custom1}%
-\rendercontactifdefined{custom2}%
-\rendercontactifdefined{email}%
-\rendercontactifdefined{emailalt}%
-\rendercontactifdefined{homepage}%
-\rendercontactifdefined{homepagessl}%
-\rendercontactifdefined{customhomepage}%
-\rendercontactifdefined{cellphone}%
-\rendercontactifdefined{phone}%
-\rendercontactifdefined{fax}%
+    \rendercontactifdefined{custom0}%
+    \rendercontactifdefined{custom1}%
+    \rendercontactifdefined{custom2}%
+    \rendercontactifdefined{email}%
+    \rendercontactifdefined{emailalt}%
+    \rendercontactifdefined{homepage}%
+    \rendercontactifdefined{homepagessl}%
+    \rendercontactifdefined{customhomepage}%
+    \rendercontactifdefined{cellphone}%
+    \rendercontactifdefined{phone}%
+    \rendercontactifdefined{fax}%
 }%
-
 \setcvcontactszone[social]{%
-\rendercontactifdefined{custom3}%
-\rendercontactifdefined{custom4}%
-\rendercontactifdefined{custom5}%
-\rendercontactifdefined{github}%
-\rendercontactifdefined{bitbucket}%
-\rendercontactifdefined{linkedin}%
-\rendercontactifdefined{twitter}%
-\rendercontactifdefined{googleplus}%
-\rendercontactifdefined{facebook}%
-\rendercontactifdefined{vk}%
-\rendercontactifdefined{pinterest}%
+    \rendercontactifdefined{custom3}%
+    \rendercontactifdefined{custom4}%
+    \rendercontactifdefined{custom5}%
+    \rendercontactifdefined{github}%
+    \rendercontactifdefined{bitbucket}%
+    \rendercontactifdefined{linkedin}%
+    \rendercontactifdefined{twitter}%
+    \rendercontactifdefined{googleplus}%
+    \rendercontactifdefined{facebook}%
+    \rendercontactifdefined{skype}%
+    \rendercontactifdefined{vk}%
+    \rendercontactifdefined{pinterest}%
 }%
 \setcvcontactszone[extra]{%
-\rendercontactifdefined{custom6}%
-\rendercontactifdefined{custom7}%
-\rendercontactifdefined{custom8}%
-\rendercontactifdefined{custom9}%
-\rendercontactifdefined{age}%
-\rendercontactifdefined{spokenlanguages}%
-\rendercontactifdefined{address}%
+    \rendercontactifdefined{custom6}%
+    \rendercontactifdefined{custom7}%
+    \rendercontactifdefined{custom8}%
+    \rendercontactifdefined{custom9}%
+    \rendercontactifdefined{birthday}%
+    \rendercontactifdefined{spokenlanguages}%
+    \rendercontactifdefined{address}%
 }%
 
 \AtBeginDocument{\maketitle}
@@ -55,12 +55,12 @@
 
 % Default header & footer
 \fancypagestyle{cvsimple}{
- \renewcommand{\headrulewidth}{0pt}
- \renewcommand{\footrulewidth}{0pt}
- \fancyhf{}
- \lfoot{\mystyle[footnote]\@cvfirstname~\@cvlastname}
- \cfoot{\mystyle[footnote]\@ifundefined{@cvtitle}{}{\@cvtitle}}
- \rfoot{\mystyle[footnote]\thepage/\pageref{LastPage}}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+    \fancyhf{}
+    \lfoot{\mystyle[footnote]\@cvfirstname~\@cvlastname}
+    \cfoot{\mystyle[footnote]\@ifundefined{@cvtitle}{}{\@cvtitle}}
+    \rfoot{\mystyle[footnote]\thepage/\pageref{LastPage}}
 }
 \pagestyle{cvsimple}
 
@@ -84,11 +84,11 @@
 
 % Section title
 \renewcommand*{\section}[1]{
-\needspace{4\baselineskip}
-\begin{center}
-  {\mystyle[sectiontitle] #1}\\[-0.8em]
-  {\color{sectionrule}\rule{\sectionrule}{0.05pt}}
-\end{center}
+    \needspace{4\baselineskip}
+    \begin{center}
+        {\mystyle[sectiontitle] #1}\\[-0.8em]
+        {\color{sectionrule}\rule{\sectionrule}{0.1pt}}
+    \end{center}
 }
 
 % Write a story relevant about you (job, education, journey, ...)
@@ -167,4 +167,5 @@
 	{\hspace*{\cvleftwidth}\mystyle[subsectiontitle] #1}\\[-0.4em]
 	\begin{tabular}[t]{@{}>{\mystyle[cvskillname]\hfill}p{\cvleftwidth}@{}>{\mystyle[cvskilldescription]}p{\cvrightwidth}@{}} } 
 	{ \end{tabular}\\[2em] \end{minipage} }
+
 \endinput
