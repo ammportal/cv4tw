@@ -92,6 +92,7 @@
 \newcommand*{\cvcontactlink}[1]{
 \IfEqCase{#1}{
     {email}{ \qdlink{mailto:}{cvcontact#1}{}}%
+    {emailalt}{ \qdlink{mailto:}{cvcontact#1}{}}%
     {homepage}{ \qdlink{http://}{cvcontact#1}{}}%
     {homepagessl}{ \qdlink{https://}{cvcontact#1}{}}%
     {customhomepage}{ \qdlink{}{cvcontact#1}{}}%
@@ -131,7 +132,5 @@
 \newcommand{\definecolorifnotdef}[3]{%
     \@ifundefined{\string\color@#1}{\definecolor{#1}{#2}{#3}}{}}
 \makeatother
-
-
 
 \endinput

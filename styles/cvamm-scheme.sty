@@ -46,6 +46,31 @@
 	\definecolorifnotdef{contrastmain}{RGB}{156,205,255}
 	\definecolorifnotdef{soft}{RGB}{0,17,34}
 }
+%
+% Earth scheme
+%
+\DeclareOption{earth}{
+    \definecolorifnotdef{main}{RGB}{42, 31, 32}
+    \definecolorifnotdef{contrastmain}{RGB}{33,107,87}
+    \definecolorifnotdef{soft}{RGB}{76, 36, 26}
+}
+%
+% Warmnatural scheme 2
+%
+\DeclareOption{warmnatural}{
+    \definecolorifnotdef{main}{RGB}{219,149,1}
+    \definecolorifnotdef{contrastmain}{RGB}{192,88,5}
+    \definecolorifnotdef{soft}{RGB}{110,103,2}
+}
+%
+% Urban scheme
+%
+\DeclareOption{urban}{
+    \definecolorifnotdef{main}{RGB}{80,109,47}
+    \definecolorifnotdef{contrastmain}{RGB}{42,41,34}
+    \definecolorifnotdef{soft}{RGB}{125,86,66}
+    \definecolorifnotdef{light}{RGB}{155,116,96}
+}
 \ProcessOptions
 
 \definecolorifnotdef{default}{rgb}{0,0,0}
@@ -77,8 +102,8 @@
 % General style
 \setmystyle[title] {\scshape\sffamily\color{title}\Huge\sloppy}
 \setmystyle[name] {\sffamily\color{name}\Huge}
-\setmystyle[sectiontitle] {\sffamily\color{sectiontitle}\Large}
-\setmystyle[subsectiontitle] {\bfseries\sffamily\color{subsectiontitle}\large}
+\setmystyle[sectiontitle] {\bfseries\sffamily\color{sectiontitle}\Large}
+\setmystyle[subsectiontitle] {\sffamily\color{subsectiontitle}\large}
 \setmystyle[default] {\color{default}\sffamily}
 \setmystyle[quote] {\color{light}}
 \setmystyle[section] {\sffamily}
@@ -98,8 +123,8 @@
 
 % Field items style
 \setmystyle[field] {\mystyle[default]\color{main}}
-\setmystyle[fieldrateempty] {\mystyle[icons]\faCircle}
-\setmystyle[fieldratefull] {\mystyle[icons]\faCircleO}
+\setmystyle[fieldrateempty] {\mystyle[icons]\faCircleO}
+\setmystyle[fieldratefull] {\mystyle[icons]\faCircle}
 
 % Skills items style
 \setmystyle[cvskillname] {\mystyle[default]\color{main}}
