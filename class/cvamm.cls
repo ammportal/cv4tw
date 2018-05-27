@@ -76,8 +76,7 @@
 \newcommand*{\setmystyle}[2][]{\expandafter\qdset{mystyle#1}{#2}}
 \newcommand*{\mystyle}[1][]{\ignorespaces\qdget{mystyle#1}}
 \newcommand*{\setmylength}[3][]{\expandafter\qdsetlength{#1}{#2}{#3}}
-%\newcommand*{\getmylength}[2][]{\expandafter\qdgetlength{#1}{#2}}
-%\newcommand*{\applymylength}[2][]{\ignorespaces\qdapplylength{#1}{#2}}
+
 \raggedbottom
 \onecolumn
 \pagestyle{empty}
@@ -120,6 +119,8 @@
 \renewcommand*{\subsection}[1]{ }
 
 \newcommand*{\story}[5]{ }
+\newcommand*{\pubsection}[2]{ }
+\newcommand*{\pubitem}[5]{ }
 \newcommand*{\renderasset}{ }
 \newcommand*{\renderassetifdefined}{ }
 \newcommand*{\rendercontact}{ }

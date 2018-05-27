@@ -116,7 +116,7 @@
 \renewcommand*{\story}[5]{
 	\begin{flushleft}
 	\begin{minipage}[t]{\cvleftwidth}
-		{\mystyle[cvstorydatelocation]#3}
+        {\mystyle[cvstorydatelocation]#3}
 		\if\relax\detokenize{#4}\relax
 		\relax
 		\else 
@@ -125,15 +125,42 @@
 		\fi
 	\end{minipage}
 	\begin{minipage}[t]{\cvrightwidth}
-		{\leavevmode\mystyle[cvstorytitle] #1}{\mystyle[cvstoryshort],~#2}
+		{\leavevmode\mystyle[cvstorytitle]#1}{\mystyle[cvstoryshort],~#2}
 		\if\relax\detokenize{#5}\relax
-		\relax
+		  \relax
 		\else
 			\\[0.3em]
 			{\mystyle[cvstorydescription]#5}
 		\fi
 	\end{minipage}
 	\end{flushleft}
+}
+
+% Write a publication
+\renewcommand*{\pubsection}[2]{
+    \begin{flushleft}
+        \begin{minipage}[t]{\cvleftwidth}
+            {\mystyle[cvstorydatelocation]#1}
+        \end{minipage}
+        \begin{minipage}[t]{\cvrightwidth}
+            {\leavevmode\ignorespaces#2}
+        \end{minipage}
+    \end{flushleft}
+}
+
+\renewcommand*{\pubitem}[5]{
+    {\mystyle[cvpubauthors]#1.}{\mystyle[cvpubtitle] #2.}{\mystyle[cvpubjournal] #3.}
+    \if\relax\detokenize{#4}\relax
+        \relax
+    \else 
+        {\mystyle[cvpubdoi] doi:\href{https://doi.org/#4}{#4}}
+    \fi
+    \if\relax\detokenize{#5}\relax
+        \relax
+    \else 
+        {\mystyle[cvpubwarning] #5}
+    \fi
+    \\[0.3em]
 }
 
 % Rate fields related to a profile
@@ -166,7 +193,7 @@
 		}
 	}
 	\begin{minipage}[t]{\textwidth}
-	{\hspace*{\cvleftwidth}\mystyle[subsectiontitle] #1}\\[1.5em]
+	{\hspace*{\cvleftwidth}\hspace*{\cvhspace}\mystyle[subsectiontitle]#1}\\[1.5em]
 	\begin{tabular}[t]{*{#2}{rl}}
 }{
 	\end{tabular}\\
@@ -175,17 +202,20 @@
 
 % Describe missions related to a job
 \renewenvironment*{missions}{
-	\begin{list}{\mystyle[missionbullet]}{\setlength{\topsep}{\parsep}\setlength{\itemsep}{\cvmissionsitemsep} \setlength{\leftmargin}{2em}\mystyle[mission] }
+	\begin{list}{\mystyle[missionbullet]}{\setlength{\topsep}{\parsep}\setlength{\itemsep}{\cvmissionsitemsep}     \setlength{\leftmargin}{2em}\mystyle[mission] }
 }{
 	\end{list}
-}
+ }
 
 % Skills environment (use \skill command to add items)
 \renewenvironment*{skills}[1]{ 
-	\newcommand*{\skill}[2][]{ ##1 & ##2 \\[\cvskillitemparskip] }
-	\begin{minipage}[t]{\textwidth}
-	{\hspace*{\cvleftwidth}\hspace*{\cvhspace}\mystyle[subsectiontitle] #1}\\[-0.4em]
-	\begin{tabular}[t]{@{}>{\mystyle[cvskillname]\hfill}p{\cvleftwidth}@{\hspace*{\cvhspace}}>{\mystyle[cvskilldescription]}p{\cvrightwidth}@{}} } 
-	{ \end{tabular}\\[2em] \end{minipage} }
+    \newcommand*{\skill}[2][]{##1 & ##2 \\[\cvskillitemparskip] }
+    \begin{minipage}[t]{\textwidth}
+        {\hspace*{\cvleftwidth}\hspace*{\cvhspace}\mystyle[subsectiontitle]#1}\\[-0.4em]
+    	\begin{tabular}[t]{@{}>{\mystyle[cvskillname]\hfill}p{\cvleftwidth}@{\hspace*{\cvhspace}}>{\mystyle[cvskilldescription]}p{\cvrightwidth}@{}}
+}{ 
+    \end{tabular}\\[2em]
+    \end{minipage} 
+ }
 
 \endinput
