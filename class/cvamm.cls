@@ -2,8 +2,8 @@
 
 \NeedsTeXFormat{LaTeX2e}
 \LoadClassWithOptions{article}
-\ProvidesClass{cvamm}[2014/05/27 v0.2 LaTeX CV class, with assets, social networks, and customizable styles forked from cv4tw]
-\RequirePackage{newenviron}
+\ProvidesClass{cvamm}[2018/05/24 v1.0 LaTeX CV class, with assets, social networks, and customizable styles forked from cv4tw]
+%\RequirePackage{newenviron}
 \RequirePackage{etoolbox}
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
@@ -91,19 +91,21 @@
 \newcommand*{\cvcontact}[1][]{\qdget{cvcontact#1}}
 \newcommand*{\cvcontactlink}[1]{
 \IfEqCase{#1}{
-    {email}{ \qdlink{mailto:}{cvcontact#1}{}}%
-    {emailalt}{ \qdlink{mailto:}{cvcontact#1}{}}%
-    {homepage}{ \qdlink{http://}{cvcontact#1}{}}%
-    {homepagessl}{ \qdlink{https://}{cvcontact#1}{}}%
-    {customhomepage}{ \qdlink{}{cvcontact#1}{}}%
-    {vk}{ \qdlink{http://www.vk.com/}{cvcontact#1}{}}%
-    {pinterest}{ \qdlink{http://www.pinterest.com/}{cvcontact#1}{}}%
-    {linkedin}{ \qdlink{https://www.linkedin.com/in/}{cvcontact#1}{}}%
-    {twitter}{ \qdlink{https://www.twitter.com/}{cvcontact#1}{}}%
-    {github}{ \qdlink{https://www.github.com/}{cvcontact#1}{}}%
-    {facebook}{ \qdlink{https://www.facebook.com/}{cvcontact#1}{}}%
-    {googleplus}{ \qdlink{https://plus.google.com/}{cvcontact#1}{}}%
-    {bitbucket}{ \qdlink{https://www.bitbucket.org/}{cvcontact#1}{}}%
+    {email}{\qdlink{mailto:}{cvcontact#1}{}}%
+    {emailalt}{\qdlink{mailto:}{cvcontact#1}{}}%
+    {homepage}{\qdlink{http://}{cvcontact#1}{}}%
+    {homepagessl}{\qdlink{https://}{cvcontact#1}{}}%
+    {customhomepage}{\qdlink{}{cvcontact#1}{}}%
+    {vk}{\qdlink{http://www.vk.com/}{cvcontact#1}{}}%
+    {pinterest}{\qdlink{http://www.pinterest.com/}{cvcontact#1}{}}%
+    {linkedin}{\qdlink{https://www.linkedin.com/in/}{cvcontact#1}{}}%
+    {twitter}{\qdlink{https://www.twitter.com/}{cvcontact#1}{}}%
+    {github}{\qdlink{https://www.github.com/}{cvcontact#1}{}}%
+    {orcid}{\qdlink{https://orcid.org/}{cvcontact#1}{}}%
+    {researchgate}{\qdlink{https://www.researchgate.net/profile/}{cvcontact#1}{}}
+    {facebook}{\qdlink{https://www.facebook.com/}{cvcontact#1}{}}%
+    {googleplus}{\qdlink{https://plus.google.com/}{cvcontact#1}{}}%
+    {bitbucket}{\qdlink{https://www.bitbucket.org/}{cvcontact#1}{}}%
 }[{\qdget{cvcontact#1}}]
 }
 \newcommand*{\ifcvcontact}[3][]{\qdif{cvcontact#1}{#2}{#3}}
@@ -116,6 +118,7 @@
 \renewcommand*{\maketitle}[1]{ }
 \renewcommand*{\section}[1]{ }
 \renewcommand*{\subsection}[1]{ }
+
 \newcommand*{\story}[5]{ }
 \newcommand*{\renderasset}{ }
 \newcommand*{\renderassetifdefined}{ }
