@@ -2,7 +2,7 @@
 \newlength{\cvtitlewidth}\setlength{\cvtitlewidth}{0.45\textwidth}
 \newlength{\cvnamewidth}\setlength{\cvnamewidth}{0.8\cvtitlewidth}
 \newlength{\cvpicturewidth}\setlength{\cvpicturewidth}{0.15\textwidth}
-\newlength{\cvassetspanelwidth}\setlength{\cvassetspanelwidth}{0.4\textwidth}
+\newlength{\cvassetspanelwidth}\setlength{\cvassetspanelwidth}{0.35\textwidth}
 \newlength{\cvassetitemsep}\setlength{\cvassetitemsep}{0.4em}
 \newlength{\cvassetspanelleftmargin}\setlength{\cvassetspanelleftmargin}{0em}
 
@@ -31,7 +31,7 @@
                 \@cvfirstname~\@cvlastname
         	    \@ifundefined{@cvtitle}{}{{\\\mystyle[title]\color{contrast}\@cvtitle}}
         	\end{minipage}
-            %\hfill
+            \hfill
         	\begin{minipage}[m]{\cvassetspanelwidth}
                 \ifcvasset[0]{
                     \begin{list}{\mystyle[assetbullet]}{\setlength{\leftmargin}{\cvassetspanelleftmargin}}
@@ -49,6 +49,7 @@
                     \end{list}
                 }{}
         	\end{minipage}
+            \hspace*{\fill}
     	\end{minipage}
     }\\[3ex]
 	\colorlet{icons}{iconstemp}

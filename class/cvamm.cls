@@ -105,6 +105,7 @@
     {facebook}{\qdlink{https://www.facebook.com/}{cvcontact#1}{}}%
     {googleplus}{\qdlink{https://plus.google.com/}{cvcontact#1}{}}%
     {bitbucket}{\qdlink{https://www.bitbucket.org/}{cvcontact#1}{}}%
+    {stackexchange}{\qdlink{https://stackexchange.com/users/10704143/}{cvcontact#1}{}}%
 }[{\qdget{cvcontact#1}}]
 }
 \newcommand*{\ifcvcontact}[3][]{\qdif{cvcontact#1}{#2}{#3}}

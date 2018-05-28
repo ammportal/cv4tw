@@ -11,6 +11,7 @@
 \RequirePackage{realboxes}
 \RequirePackage{array}
 \RequirePackage{forloop}
+\RequirePackage[symbol]{footmisc}
 
 \setcvcontactszone[main]{%
     \rendercontactifdefined{custom0}%
@@ -30,10 +31,10 @@
     \rendercontactifdefined{custom4}%
     \rendercontactifdefined{custom5}%
     \rendercontactifdefined{orcid}%
-    \rendercontactifdefined{github}%
-    \rendercontactifdefined{bitbucket}%
     \rendercontactifdefined{linkedin}%
     \rendercontactifdefined{researchgate}%
+    \rendercontactifdefined{github}%
+    \rendercontactifdefined{bitbucket}%
 }%
 \setcvcontactszone[social2]{%
     \rendercontactifdefined{custom6}%
@@ -41,6 +42,7 @@
     \rendercontactifdefined{twitter}%
     \rendercontactifdefined{googleplus}%
     \rendercontactifdefined{facebook}%
+    \rendercontactifdefined{stackexchange}%
     \rendercontactifdefined{skype}%
     \rendercontactifdefined{vk}%
     \rendercontactifdefined{pinterest}%
@@ -88,7 +90,7 @@
 %Useful lengths
 \newlength{\cvhspace}\setlength{\cvhspace}{2ex}
 \newlength{\cvleftwidth}\setlength{\cvleftwidth}{4cm}
-\newlength{\cvrightwidth}\setlength{\cvrightwidth}{\textwidth - \cvleftwidth - \cvhspace}
+\newlength{\cvrightwidth}\setlength{\cvrightwidth}{\textwidth - \cvleftwidth - 2\cvhspace}
 \newlength{\cvfielditemparskip}\setlength{\cvfielditemparskip}{0.5em}
 \newlength{\cvskillitemparskip}\setlength{\cvskillitemparskip}{-0.8em}
 \newlength{\cvmissionsitemsep}\setlength{\cvmissionsitemsep}{0em}
@@ -107,8 +109,8 @@
 \renewcommand*{\section}[1]{
     \needspace{4\baselineskip}
     \begin{center}
-        {\mystyle[sectiontitle] #1}\\[-0.8em]
-        {\color{sectionrule}\rule{\sectionrule}{0.1pt}}
+        {\mystyle[sectiontitle] #1}\\[-0.6em]
+        {\color{sectionrule}\rule{\sectionrule}{1.5pt}}
     \end{center}
 }
 
@@ -120,16 +122,17 @@
 		\if\relax\detokenize{#4}\relax
 		\relax
 		\else 
-			\\[0.3em]
+			\\[0.5em]
 			{\mystyle[cvstoryquicknotes]#4}
 		\fi
 	\end{minipage}
+    \hfill
 	\begin{minipage}[t]{\cvrightwidth}
 		{\leavevmode\mystyle[cvstorytitle]#1}{\mystyle[cvstoryshort],~#2}
 		\if\relax\detokenize{#5}\relax
 		  \relax
 		\else
-			\\[0.3em]
+			\\[0.5em]
 			{\mystyle[cvstorydescription]#5}
 		\fi
 	\end{minipage}
@@ -142,6 +145,7 @@
         \begin{minipage}[t]{\cvleftwidth}
             {\mystyle[cvstorydatelocation]#1}
         \end{minipage}
+        \hfill
         \begin{minipage}[t]{\cvrightwidth}
             {\leavevmode\ignorespaces#2}
         \end{minipage}
@@ -149,7 +153,7 @@
 }
 
 \renewcommand*{\pubitem}[5]{
-    {\mystyle[cvpubauthors]#1.}{\mystyle[cvpubtitle] #2.}{\mystyle[cvpubjournal] #3.}
+    {\mystyle[cvpubauthors]#1.}{\mystyle[cvpubtitle] ``#2''.}{\mystyle[cvpubjournal] #3.}
     \if\relax\detokenize{#4}\relax
         \relax
     \else 
@@ -160,7 +164,6 @@
     \else 
         {\mystyle[cvpubwarning] #5}
     \fi
-    \\[0.3em]
 }
 
 % Rate fields related to a profile
@@ -179,8 +182,8 @@
 			\stepcounter{fieldscurrentcolumn}
 			\expandafter\@secondoftwo
 		\fi
-		{{\mystyle[field] ##1} & ##2 \\[\cvfielditemparskip] }
-		{{\mystyle[field] ##1} & ##2 & }
+		{{\mystyle[field]##1} & ##2 \\[\cvfielditemparskip] }
+		{{\mystyle[field]##1} & ##2 &}
 			
 	\makeatother
 	}
@@ -193,10 +196,10 @@
 		}
 	}
 	\begin{minipage}[t]{\textwidth}
-	{\hspace*{\cvleftwidth}\hspace*{\cvhspace}\mystyle[subsectiontitle]#1}\\[1.5em]
+	{\hspace*{\cvleftwidth}\hspace*{2\cvhspace}\mystyle[subsectiontitle]#1}\\[1em]
 	\begin{tabular}[t]{*{#2}{rl}}
 }{
-	\end{tabular}\\
+	\end{tabular}
 	\end{minipage}
 }
 
@@ -211,8 +214,8 @@
 \renewenvironment*{skills}[1]{ 
     \newcommand*{\skill}[2][]{##1 & ##2 \\[\cvskillitemparskip] }
     \begin{minipage}[t]{\textwidth}
-        {\hspace*{\cvleftwidth}\hspace*{\cvhspace}\mystyle[subsectiontitle]#1}\\[-0.4em]
-    	\begin{tabular}[t]{@{}>{\mystyle[cvskillname]\hfill}p{\cvleftwidth}@{\hspace*{\cvhspace}}>{\mystyle[cvskilldescription]}p{\cvrightwidth}@{}}
+        {\hspace*{\cvleftwidth}\hspace*{2\cvhspace}\mystyle[subsectiontitle]#1}\\[-0.4em]
+    	\begin{tabular}[t]{@{}>{\mystyle[cvskillname]\hfill}p{\cvleftwidth}@{\hspace*{2\cvhspace}}>{\mystyle[cvskilldescription]}p{\cvrightwidth}@{}}
 }{ 
     \end{tabular}\\[2em]
     \end{minipage} 
