@@ -122,6 +122,7 @@
 \newcommand*{\story}[5]{ }
 \newcommand*{\pubsection}[2]{ }
 \newcommand*{\pubitem}[5]{ }
+\newcommand*{\cvreference}[7]{ }
 \newcommand*{\renderasset}{ }
 \newcommand*{\renderassetifdefined}{ }
 \newcommand*{\rendercontact}{ }

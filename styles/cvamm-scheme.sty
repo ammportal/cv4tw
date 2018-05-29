@@ -68,10 +68,10 @@
 % Urban scheme
 %
 \DeclareOption{urban}{
-    \definecolorifnotdef{main}{RGB}{80,109,47}
+    \definecolorifnotdef{main}{RGB}{125,86,66}
     \definecolorifnotdef{contrastmain}{RGB}{42,41,34}
-    \definecolorifnotdef{soft}{RGB}{125,86,66}
-    \definecolorifnotdef{light}{RGB}{155,116,96}
+    \definecolorifnotdef{soft}{RGB}{80,99,47}
+    \definecolorifnotdef{light}{RGB}{110,129,77}
 }
 %
 % Fresh scheme
@@ -114,8 +114,8 @@
 % General style
 \setmystyle[title] {\scshape\sffamily\color{title}\Huge\sloppy}
 \setmystyle[name] {\sffamily\color{name}\Huge}
-\setmystyle[sectiontitle] {\bfseries\sffamily\color{sectiontitle}\Large}
-\setmystyle[subsectiontitle] {\sffamily\color{subsectiontitle}\large}
+\setmystyle[sectiontitle] {\bfseries\sffamily\color{sectiontitle}\Large\scshape}
+\setmystyle[subsectiontitle] {\bfseries\sffamily\color{subsectiontitle}\large}
 \setmystyle[default] {\color{default}\sffamily}
 \setmystyle[quote] {\color{light}}
 \setmystyle[section] {\sffamily}
@@ -143,12 +143,17 @@
 \setmystyle[cvskillname] {\mystyle[default]\color{main}}
 \setmystyle[cvskilldescription] {\mystyle[default]}
 
+% References items style
+\setmystyle[cvreference]{\footnotesize}
+\setmystyle[cvreferencename]{\mystyle[cvstorytitle]\mystyle[cvreference]}
+\setmystyle[cvreferencedescription]{\mystyle[cvstorydescription]\mystyle[cvreference]}
+
 % Publication items style
 \setmystyle[cvpubauthors] {\sffamily\color{main}\bfseries}
 \setmystyle[cvpubtitle] {\mystyle[default]}
 \setmystyle[cvpubjournal] {\itshape\sffamily}
 \setmystyle[cvpubdoi] {\mystyle[default]}
-\setmystyle[cvpubwarning] {\mystyle[default]\bfseries}
+\setmystyle[cvpubwarning] {\mystyle[default]\color{contrastmain}\bfseries}
 
 %Contact items style
 \setmystyle[cvcontact]{\small\sffamily}
@@ -209,15 +214,15 @@
 \setmystyle[skypebullet]{{\mystyle[icons]\faSkype}}
 \setmystyle[pinterestbullet]{{\mystyle[icons]\faPinterest}}
 \setmystyle[googleplusbullet]{{\mystyle[icons]\faGooglePlus}}
-\setmystyle[emailbullet]{{\mystyle[icons]\faEnvelope}}
-\setmystyle[emailaltbullet]{{\mystyle[icons]\faEnvelope}}
-\setmystyle[cellphonebullet]{{\mystyle[icons]\faMobilePhone}}
+\setmystyle[emailbullet]{{\mystyle[icons]\faAt}}
+\setmystyle[emailaltbullet]{{\mystyle[icons]\faAt}}
+\setmystyle[cellphonebullet]{{\mystyle[icons]\faPhone}}
 \setmystyle[phonebullet]{{\mystyle[icons]\faPhone}}
 \setmystyle[faxbullet]{{\mystyle[icons]\faPrint}}
-\setmystyle[homepagebullet]{{\mystyle[icons]\faLaptop}}
+\setmystyle[homepagebullet]{{\mystyle[icons]\faGlobe}}
 \setmystyle[homepagesslbullet]{{\mystyle[icons]\faLaptop}}
 \setmystyle[customhomepagebullet]{{\mystyle[icons]\faLaptop}}
-\setmystyle[addressbullet]{{\mystyle[icons]\faHome}}
+\setmystyle[addressbullet]{{\mystyle[icons]\faEnvelope}}
 \setmystyle[birthdaybullet]{{\mystyle[icons]\faBirthdayCake}}
 \setmystyle[spokenlanguagesbullet]{{\mystyle[icons]\faLanguage}}
 

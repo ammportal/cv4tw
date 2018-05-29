@@ -67,7 +67,7 @@
 
 \AtEndPreamble{
     \hypersetup{
-        pdftitle={\@cvfirstname\ \@cvlastname\@ifundefined{@cvacademictitle}{}{, \@cvacademictitle} -- \@ifundefined{@cvtopic}{}{\@cvtopic}},
+        pdftitle={\@cvfirstname\ \@cvlastname\@ifundefined{@cvacademictitle}{}{, \@cvacademictitle} \@ifundefined{@cvtopic}{}{-- \@cvtopic}},
         pdfauthor={\@cvfirstname\ \@cvlastname\@ifundefined{@cvacademictitle}{}{, \@cvacademictitle}},
     }
 }
@@ -89,13 +89,14 @@
 
 %Useful lengths
 \newlength{\cvhspace}\setlength{\cvhspace}{2ex}
-\newlength{\cvleftwidth}\setlength{\cvleftwidth}{4cm}
+\newlength{\cvleftwidth}\setlength{\cvleftwidth}{3.5cm}
 \newlength{\cvrightwidth}\setlength{\cvrightwidth}{\textwidth - \cvleftwidth - 2\cvhspace}
-\newlength{\cvfielditemparskip}\setlength{\cvfielditemparskip}{0.5em}
+\newlength{\cvfielditemparskip}\setlength{\cvfielditemparskip}{0.4em}
 \newlength{\cvskillitemparskip}\setlength{\cvskillitemparskip}{-0.8em}
 \newlength{\cvmissionsitemsep}\setlength{\cvmissionsitemsep}{0em}
 \newlength{\cvfieldsep}\setlength{\cvfieldsep}{0em}
 \newlength{\sectionrule}\setlength{\sectionrule}{\textwidth}
+\newlength{\cvreferencewidth}\setlength{\cvreferencewidth}{0.33\textwidth}
 \setlength{\parindent}{0cm}
 
 \newcounter{currentrate}
@@ -114,28 +115,32 @@
     \end{center}
 }
 
+% Subsection title
+\renewcommand*{\subsection}[1]{
+    {\hspace*{\cvleftwidth}\hspace*{2\cvhspace}\mystyle[subsectiontitle]#1}
+}
 % Write a story relevant about you (job, education, journey, ...)
 \renewcommand*{\story}[5]{
 	\begin{flushleft}
-	\begin{minipage}[t]{\cvleftwidth}
-        {\mystyle[cvstorydatelocation]#3}
-		\if\relax\detokenize{#4}\relax
-		\relax
-		\else 
-			\\[0.5em]
-			{\mystyle[cvstoryquicknotes]#4}
-		\fi
-	\end{minipage}
-    \hfill
-	\begin{minipage}[t]{\cvrightwidth}
-		{\leavevmode\mystyle[cvstorytitle]#1}{\mystyle[cvstoryshort],~#2}
-		\if\relax\detokenize{#5}\relax
-		  \relax
-		\else
-			\\[0.5em]
-			{\mystyle[cvstorydescription]#5}
-		\fi
-	\end{minipage}
+    	\begin{minipage}[t]{\cvleftwidth}
+            {\mystyle[cvstorydatelocation]#3}
+    		\if\relax\detokenize{#4}\relax
+    		\relax
+    		\else 
+    			\\[1em]
+    			{\mystyle[cvstoryquicknotes]#4}
+    		\fi
+    	\end{minipage}
+        \hfill
+    	\begin{minipage}[t]{\cvrightwidth}
+    		{\leavevmode\mystyle[cvstorytitle]#1}{\mystyle[cvstoryshort],~#2}
+    		\if\relax\detokenize{#5}\relax
+    		  \relax
+    		\else
+    			\\[0.5em]
+    			{\mystyle[cvstorydescription]#5}
+    		\fi
+    	\end{minipage}
 	\end{flushleft}
 }
 
@@ -166,6 +171,33 @@
     \fi
 }
 
+% Write References (modified from ilia-katz/cv4tw & cpauvert/cv4tw)
+%\cvreference{Name}{Position}{ToMe}{Phone}{Mail}{WebSite}
+%              1       2       3      4     5      6
+\renewcommand*{\cvreference}[6]{
+    \vspace{-0.5em}
+    \begin{minipage}[t]{\cvreferencewidth}
+        \begin{footnotesize}
+            {\mystyle[cvreferencename]\href{#6}{#1}}{\mystyle[cvreferencedescription],~#3}\\
+            {\mystyle[cvreference] #2}\\
+            {
+                \if\relax\detokenize{#5}\relax
+                    \relax
+                \else
+                    \mystyle[emailbullet]\mystyle[cvreference]\begin{tabular}[t]{>{\mystyle[email]\mystyle[cvreference]}l}\href{mailto:#5}{#5}\end{tabular}\par
+                \fi
+            }
+            {
+                \if\relax\detokenize{#4}\relax
+                    \relax
+                \else
+                    \mystyle[phonebullet]\mystyle[cvreference]\begin{tabular}[t]{>{\mystyle[phone]\mystyle[cvreference]}l}#4\end{tabular}\par
+                \fi
+            }
+        \end{footnotesize}
+    \end{minipage}
+}
+
 % Rate fields related to a profile
 \renewenvironment*{fields}[3]{
 	\setcounter{fieldsbyrow}{#2}
@@ -182,8 +214,8 @@
 			\stepcounter{fieldscurrentcolumn}
 			\expandafter\@secondoftwo
 		\fi
-		{{\mystyle[field]##1} & ##2 \\[\cvfielditemparskip] }
-		{{\mystyle[field]##1} & ##2 &}
+		{{\mystyle[field]##1}&##2\\[\cvfielditemparskip]}
+		{{\mystyle[field]##1}&##2&}
 			
 	\makeatother
 	}
