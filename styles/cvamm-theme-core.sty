@@ -97,7 +97,7 @@
 \newlength{\cvmissionsitemsep}\setlength{\cvmissionsitemsep}{0em}
 \newlength{\cvfieldsep}\setlength{\cvfieldsep}{0em}
 \newlength{\sectionrule}\setlength{\sectionrule}{\textwidth}
-\newlength{\cvreferencewidth}\setlength{\cvreferencewidth}{0.33\textwidth}
+\newlength{\cvreferencewidth}\setlength{\cvreferencewidth}{0.3\textwidth}
 \setlength{\parindent}{0cm}
 
 \newcounter{currentrate}
@@ -138,7 +138,7 @@
     		\if\relax\detokenize{#5}\relax
     		  \relax
     		\else
-    			\\[0.5em]
+    			\\
     			{\mystyle[cvstorydescription]#5}
     		\fi
     	\end{minipage}
@@ -177,6 +177,7 @@
 %              1       2       3      4     5      6
 \renewcommand*{\cvreference}[6]{
     \vspace{-0.5em}
+    \hspace*{\cvhspace}
     \begin{minipage}[t]{\cvreferencewidth}
         \begin{footnotesize}
             {\mystyle[cvreferencename]\href{#6}{#1}}{\mystyle[cvreferencedescription],~#3}\\
