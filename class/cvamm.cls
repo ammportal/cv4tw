@@ -12,6 +12,7 @@
 \RequirePackage{lastpage}
 \RequirePackage[hidelinks]{hyperref}
 \RequirePackage[utf8]{inputenc}
+\RequirePackage[export]{adjustbox}
 
 % Quick and Dirty key values commands
 

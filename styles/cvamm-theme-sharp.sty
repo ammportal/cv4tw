@@ -1,8 +1,8 @@
 %Useful lengths
-\newlength{\cvtitlewidth}\setlength{\cvtitlewidth}{0.45\textwidth}
+\newlength{\cvtitlewidth}\setlength{\cvtitlewidth}{0.4\textwidth}
 \newlength{\cvnamewidth}\setlength{\cvnamewidth}{0.8\cvtitlewidth}
-\newlength{\cvpicturewidth}\setlength{\cvpicturewidth}{0.15\textwidth}
-\newlength{\cvassetspanelwidth}\setlength{\cvassetspanelwidth}{0.35\textwidth}
+\newlength{\cvpicturewidth}\setlength{\cvpicturewidth}{0.2\textwidth}
+\newlength{\cvassetspanelwidth}\setlength{\cvassetspanelwidth}{0.3\textwidth}
 \newlength{\cvassetitemsep}\setlength{\cvassetitemsep}{0.4em}
 \newlength{\cvassetspanelleftmargin}\setlength{\cvassetspanelleftmargin}{0em}
 
@@ -17,11 +17,8 @@
         \begin{minipage}{\paperwidth}
             \@ifundefined{@cvpicture}{}{
                 \begin{minipage}[m]{\cvpicturewidth}
-                    \fboxsep=1mm
-                    \fboxrule=0.05pt
-                    \fcolorbox{black}{white}{
-                        \includegraphics[keepaspectratio=true,width=\cvpicturewidth]{\@cvpicture}
-                    }
+                    \fboxrule=1pt
+                    \includegraphics[keepaspectratio=true,width=\cvpicturewidth, frame]{\@cvpicture}
                 \end{minipage}
                 \hspace{1em}
             }
