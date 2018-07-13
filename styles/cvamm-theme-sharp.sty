@@ -17,8 +17,7 @@
         \begin{minipage}{\paperwidth}
             \@ifundefined{@cvpicture}{}{
                 \begin{minipage}[m]{\cvpicturewidth}
-                    \fboxrule=1pt
-                    \includegraphics[keepaspectratio=true,width=\cvpicturewidth, frame]{\@cvpicture}
+                    \includegraphics[keepaspectratio=true,width=\cvpicturewidth, cfbox=picframe 2pt 0pt]{\@cvpicture}
                 \end{minipage}
                 \hspace{1em}
             }
