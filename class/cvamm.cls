@@ -3,7 +3,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \LoadClassWithOptions{article}
 \ProvidesClass{cvamm}[2018/05/24 v1.0 LaTeX CV class, with assets, social networks, and customizable styles forked from cv4tw]
-%\RequirePackage{newenviron}
 \RequirePackage{etoolbox}
 \RequirePackage{xcolor}
 \RequirePackage{graphicx}
@@ -11,7 +10,6 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
 \RequirePackage[hidelinks]{hyperref}
-\RequirePackage[utf8]{inputenc}
 \RequirePackage[export]{adjustbox}
 
 % Quick and Dirty key values commands
